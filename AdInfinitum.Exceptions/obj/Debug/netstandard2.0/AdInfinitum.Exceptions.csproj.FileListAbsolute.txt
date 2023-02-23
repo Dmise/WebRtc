@@ -1,0 +1,10 @@
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\bin\Debug\netstandard2.0\AdInfinitum.Exceptions.deps.json
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\bin\Debug\netstandard2.0\AdInfinitum.Exceptions.dll
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\bin\Debug\netstandard2.0\AdInfinitum.Exceptions.pdb
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\obj\Debug\netstandard2.0\AdInfinitum.Exceptions.csproj.AssemblyReference.cache
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\obj\Debug\netstandard2.0\AdInfinitum.Exceptions.GeneratedMSBuildEditorConfig.editorconfig
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\obj\Debug\netstandard2.0\AdInfinitum.Exceptions.AssemblyInfoInputs.cache
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\obj\Debug\netstandard2.0\AdInfinitum.Exceptions.AssemblyInfo.cs
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\obj\Debug\netstandard2.0\AdInfinitum.Exceptions.csproj.CoreCompileInputs.cache
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\obj\Debug\netstandard2.0\AdInfinitum.Exceptions.dll
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Exceptions\obj\Debug\netstandard2.0\AdInfinitum.Exceptions.pdb

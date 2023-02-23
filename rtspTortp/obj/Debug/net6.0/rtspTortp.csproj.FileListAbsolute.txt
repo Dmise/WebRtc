@@ -1,0 +1,60 @@
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.csproj.AssemblyReference.cache
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.GeneratedMSBuildEditorConfig.editorconfig
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.AssemblyInfoInputs.cache
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.AssemblyInfo.cs
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.csproj.CoreCompileInputs.cache
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\rtspTortp.exe
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\rtspTortp.deps.json
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\rtspTortp.runtimeconfig.json
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\rtspTortp.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\rtspTortp.pdb
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\DnsClient.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Newtonsoft.Json.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Serilog.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\SIPSorcery.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\websocket-sharp.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\bin\Debug\net6.0\SIPSorceryMedia.Abstractions.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.csproj.CopyComplete
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\refint\rtspTortp.dll
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.pdb
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\rtspTortp.genruntimeconfig.cache
+A:\Programming\SandBox\rtspTortp\rtspTortp\obj\Debug\net6.0\ref\rtspTortp.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\rtspTortp.exe
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\rtspTortp.deps.json
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\rtspTortp.runtimeconfig.json
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\rtspTortp.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\rtspTortp.pdb
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\DnsClient.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Newtonsoft.Json.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Serilog.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\SIPSorcery.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\websocket-sharp.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\bin\Debug\net6.0\SIPSorceryMedia.Abstractions.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.csproj.AssemblyReference.cache
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.GeneratedMSBuildEditorConfig.editorconfig
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.AssemblyInfoInputs.cache
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.AssemblyInfo.cs
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.csproj.CoreCompileInputs.cache
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.csproj.CopyComplete
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\refint\rtspTortp.dll
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.pdb
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\rtspTortp.genruntimeconfig.cache
+A:\Programming\SandBox\rtspTortp - NoIce\rtspTortp\obj\Debug\net6.0\ref\rtspTortp.dll

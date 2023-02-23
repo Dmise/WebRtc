@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JiTR27zAJTvtl6N6qYSgA1oMgpYcLM0hcuU9C5v/1h5Mf+pGpDpTSNo1x4EdLrTymvn0SF3vom/SZSVTKk3oyw==",
+  "success": true,
+  "projectFilePath": "A:\\Work\\PIMU2\\AdInfinitum\\AdInfinitum.Exceptions\\AdInfinitum.Exceptions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dmise\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\dmise\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\dmise\\.nuget\\packages\\nlog\\5.0.1\\nlog.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

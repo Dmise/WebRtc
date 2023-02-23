@@ -1,0 +1,13 @@
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\bin\Debug\netstandard2.0\AdInfinitum.Logging.deps.json
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\bin\Debug\netstandard2.0\AdInfinitum.Logging.dll
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\bin\Debug\netstandard2.0\AdInfinitum.Logging.pdb
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\bin\Debug\netstandard2.0\AdInfinitum.Exceptions.dll
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\bin\Debug\netstandard2.0\AdInfinitum.Exceptions.pdb
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\obj\Debug\netstandard2.0\AdInfinitum.Logging.csproj.AssemblyReference.cache
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\obj\Debug\netstandard2.0\AdInfinitum.Logging.GeneratedMSBuildEditorConfig.editorconfig
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\obj\Debug\netstandard2.0\AdInfinitum.Logging.AssemblyInfoInputs.cache
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\obj\Debug\netstandard2.0\AdInfinitum.Logging.AssemblyInfo.cs
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\obj\Debug\netstandard2.0\AdInfinitum.Logging.csproj.CoreCompileInputs.cache
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\obj\Debug\netstandard2.0\AdInfinitum.Logging.csproj.CopyComplete
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\obj\Debug\netstandard2.0\AdInfinitum.Logging.dll
+A:\Work\PIMU2\AdInfinitum\AdInfinitum.Logging\obj\Debug\netstandard2.0\AdInfinitum.Logging.pdb
