@@ -1,48 +1,62 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static WithCombiner.FFmpegCommandBuilder;
 
 namespace WithCombiner
 {
-    internal class ProcessRunner
+    internal class RTSPToSdpStreamer : IDisposable
     {
-        private const string RTSP_ADDRESS  = "rtsp://admin:HelloWorld4@192.168.1.64:554/ISAPI/Streaming/Channels/101";
-        private const int VideoPort = 8100; //8084 works
-        private const string SdpFileName = "rtpsession.sdp";
+        // const
+        private uint _ssrc = 38106908;
+
+        //injected
+        private ILogger<RTSPToSdpStreamer>? _logger;
+        private string _rtspAddress;
+        private FFMpegAppOptions _ffmpegOptions;
+        private int _videoPort;
+
+        //other private
         private FFmpegCommandBuilder _ffCombiner = new FFmpegCommandBuilder();
         private Process _ffmpegProcess;
-        private FFMpegAppOptions _ffmpegOptions = new FFMpegAppOptions
-        {
-            BinaryFolder = "C:\\Program Files\\ffmpeg\\bin",
-            TempFolder = "A:\\Work\\PIMU\\ffmpeg_temp",
-            SdpFolder = "A:\\Work\\PIMU\\ffmpeg_sdp"
-        };
 
-        public string SdpFilePath 
+        //public fields
+
+        public string SdpFilePath
         {
             get
             {
-                return Path.Combine(_ffmpegOptions.SdpFolder, SdpFileName);
+                return Path.Combine(_ffmpegOptions.SdpFolder, $"{_videoPort}.sdp");
             }
         }
 
-        public uint SSRC { get; private set; } = 38106908;
+        public uint SSRC { get { return _ssrc; } }
         public int RtpPort
         {
             get
             {
-                return VideoPort;
+                return _videoPort;
             }
         }
 
-        public void Run() 
+        public RTSPToSdpStreamer(string rtspaddress, FFMpegAppOptions ffmpegOptions, int videoPort, 
+            ILogger<RTSPToSdpStreamer>? logger = null)  // _sp.GetService<ILogger<RTSPToSdpStreamer>>(), _rtspStreamAddress,  _ffmpegOptions
+        {
+            _rtspAddress = rtspaddress;
+            _ffmpegOptions = ffmpegOptions;
+            _videoPort = videoPort;
+            _logger = logger;
+        }
+
+        public void Run()
         {
             ConfigureFfMpegCombiner();
             ConfigureAndRunProcess();
-        } 
+        }
 
         private void ConfigureAndRunProcess()
         {
@@ -53,31 +67,29 @@ namespace WithCombiner
             _ffmpegProcess.StartInfo.RedirectStandardError = true;
             _ffmpegProcess.StartInfo.RedirectStandardInput = true;
             _ffmpegProcess.StartInfo.RedirectStandardOutput = true;
-            
+
             _ffmpegProcess.OutputDataReceived += FFMpegOutputLog;
             _ffmpegProcess.ErrorDataReceived += FFMpegOutputError;
-            
-            _ffmpegProcess.StartInfo.Arguments = _ffCombiner.GetCommandString(FFmpegCommandBuilder.FfmpegStreamTypeEnum.rtspTortp_codecWithSsrc);
+
+            _ffmpegProcess.StartInfo.Arguments = _ffCombiner.GetCommandString(FfmpegStreamTypeEnum.rtspTortp_codecWithSsrc);
             _ffmpegProcess.Start();
 
             _ffmpegProcess.BeginOutputReadLine();
             _ffmpegProcess.BeginErrorReadLine();
         }
 
-       
-
         private void ConfigureFfMpegCombiner()
         {
             // TODO: FFmpegBuilderConfig. Class with configuration that puts inside the Combiner.
             _ffCombiner.SSRC = SSRC;
             _ffCombiner.EXE_PATH = Path.Combine(_ffmpegOptions.BinaryFolder, "ffmpeg");
-            _ffCombiner.RTSP = RTSP_ADDRESS;
+            _ffCombiner.RTSP = _rtspAddress;
             _ffCombiner.VideoCodec = CodecEnum.h264.ToString("g");
             // server - default Ip.loopback
             // ssrc - default 
             _ffCombiner.FfmpegAppOptions = _ffmpegOptions;
-            _ffCombiner.RTP_PORT = VideoPort;
-            _ffCombiner.SdpFullPath = Path.Combine(_ffmpegOptions.SdpFolder,SdpFileName);
+            _ffCombiner.RTP_PORT = _videoPort;
+            _ffCombiner.SdpFullPath = Path.Combine(_ffmpegOptions.SdpFolder, SdpFilePath);
         }
 
         public string GetCmdCommand()
@@ -93,6 +105,15 @@ namespace WithCombiner
         private void FFMpegOutputLog(object sender, DataReceivedEventArgs e)
         {
             Console.WriteLine(e.Data);
+        }
+
+        public void Dispose()
+        {
+            KillProcess();
+        }
+        public void KillProcess()
+        {
+            _ffmpegProcess.Kill();
         }
     }
 }
