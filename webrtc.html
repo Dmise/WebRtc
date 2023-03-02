@@ -75,16 +75,30 @@
 		};
 		
 		function getserver(){
-			let url = wsserver+wsport+'/';
-			
+			console.log(`wsport value ${document.getElementById("wsport").value}`)
+			let url;
+			if (document.getElementById("wsport").value == "")
+			{
+				url = wsserver + document.getElementById("wsport").placeholder + '/';
+			}
+			else{
+				url = wsserver + document.getElementById("wsport").value + '/';
+			}
+						
 			return url;
 		};
 		
 		function fillWsPlaceholder(){
+			console.log('fillPlaceholder');
 			document.getElementsByName("wsport")[0].placeholder = wsport;
 		
 		};
-		window.onload = fillWsPlaceholder
+		
+		
+		window.onload = (event) => {
+			console.log('window.onload');
+			fillWsPlaceholder();
+		};
 
     </script>
 </head>
@@ -92,7 +106,7 @@
 
     <video controls autoplay="autoplay" id="videoCtl" width="640" height="480"></video>
 	<br>
-	<label for="wsport">ws://localhost:</label><input type="text" id="wsport" name="wsport" placeholder="default port is {getPort()}" onchange="wsupdate();"></input>
+	<label for="wsport">ws://localhost:</label><input type="text" id="wsport" name="wsport" ></input>
 
     <div>
         <!--<button type="button" class="btn btn-success" onclick="start(sendOfferUrl);">Start Send Offer</button>-->
