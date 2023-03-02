@@ -31,6 +31,8 @@ using WebSocketSharp.Net.WebSockets;
 using WebSocketSharp.Server;
 using System.Windows;
 using System.Runtime.Intrinsics.Arm;
+using VideoLib.Infrastructure;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace SIPSorcery.Examples
 {
@@ -99,8 +101,10 @@ namespace SIPSorcery.Examples
         private static Microsoft.Extensions.Logging.ILogger logger = NullLogger.Instance;
 
         private static WebSocketServer _webSocketServer;
-        private static SDPAudioVideoMediaFormat _ffmpegVideoFormat;
+        private static RTCPeerConnection _pc;
         private static RTPSession _ffmpegListener;
+        private static SDPAudioVideoMediaFormat _ffmpegVideoFormat;
+        
         private bool _runningSession = false;
         private static Action<RTCPeerConnection,Action<IPEndPoint, SDPMediaTypesEnum, RTPPacket>> SubUnscriber;
         private static CancellationTokenSource exitCts = new CancellationTokenSource();
@@ -126,9 +130,7 @@ namespace SIPSorcery.Examples
             }
         
             logger = AddConsoleLogger();
-            
-            string ffmpegCommand = String.Format(FFMPEG_DEFAULT_COMMAND, FFMPEG_PREVEW, videoCodec, FFMPEG_DEFAULT_RTP_PORT, FFMPEG_SDP_FILE);
-
+                       
             // Start web socket.
             Console.WriteLine("Starting web socket server...");
             Console.WriteLine($"WebSocket Address: {WsAddress.MapToIPv4().ToString()}:{WEBSOCKET_PORT}");
@@ -159,7 +161,8 @@ namespace SIPSorcery.Examples
             var sdpFilePath = String.Concat("\"", exePath, "/ffmpeg.sdp", "\"").Replace("\\", "/");
             //Console.WriteLine($"ffmpeg -re -an -i rtsp://admin:HelloWorld4@192.168.1.64:554/ISAPI/Streaming/Channels/101 -vcodec h264 -muxdelay 0.1 -use_wallclock_as_timestamps 1 -f rtp rtp://127.0.0.1:{FFMPEG_DEFAULT_RTP_PORT} -sdp_file {sdpFilePath}");
             Console.WriteLine($"ffmpeg -re -an -i {RTSP_CAM} -vcodec {FFMPEG_H264_CODEC} -muxdelay 0.1 -use_wallclock_as_timestamps 1 -ssrc {SSRC_REMOTE_VIDEO} -f rtp rtp://{WsAddress.MapToIPv4().ToString()}:{FFMPEG_DEFAULT_RTP_PORT} -sdp_file {sdpFilePath}");
-
+            
+            
             if (!File.Exists(FFMPEG_SDP_FILE))
             {                           
                 Console.WriteLine($"Waiting for {FFMPEG_SDP_FILE} to appear...");
@@ -190,7 +193,8 @@ namespace SIPSorcery.Examples
             if (!cancel.IsCancellationRequested)
             {
                 var sdp = SDP.ParseSDPDescription(File.ReadAllText(FFMPEG_SDP_FILE));
-               
+
+                
                 _ffmpegListener = new RTPSession(false, false, false, IPAddress.Loopback, FFMPEG_DEFAULT_RTP_PORT);
                 _ffmpegListener.AcceptRtpFromAny = true;
 
@@ -199,13 +203,17 @@ namespace SIPSorcery.Examples
                 var videoAnn = sdp.Media.Single(x => x.Media == SDPMediaTypesEnum.video);
                 videoFormatRTP = videoAnn.MediaFormats.Values.First();
                 _ffmpegVideoFormat = videoFormatRTP;
-                MediaStreamTrack videoTrack = new MediaStreamTrack(SDPMediaTypesEnum.video, false, new List<SDPAudioVideoMediaFormat> { videoFormatRTP }, MediaStreamStatusEnum.RecvOnly);
-                //videoTrack.Ssrc = SSRC_REMOTE_VIDEO; //   /!\ Need to set the correct SSRC in order to accept RTP stream
-                var point1 = _ffmpegListener.VideoLocalTrack;
+                MediaStreamTrack videoTrack = new MediaStreamTrack(
+                                                SDPMediaTypesEnum.video,
+                                                false, 
+                                                new List<SDPAudioVideoMediaFormat> { videoFormatRTP },
+                                                MediaStreamStatusEnum.RecvOnly);
+                videoTrack.Ssrc = SSRC_REMOTE_VIDEO; //   /!\ Need to set the correct SSRC in order to accept RTP stream
+                
                 _ffmpegListener.addTrack(videoTrack);
                 _ffmpegListener.SetRemoteDescription(SIP.App.SdpType.answer, sdp);
 
-                var point2  = _ffmpegListener.VideoLocalTrack;
+                
                 // Set a dummy destination end point or the RTP session will end up sending RTCP reports
                 // to itself. port = 0 
                 var dummyIPEndPoint = new IPEndPoint(IPAddress.Loopback, FFMPEG_DEFAULT_RTP_PORT);
@@ -258,8 +266,12 @@ namespace SIPSorcery.Examples
         {
             var pc = new RTCPeerConnection(null);
 
-            MediaStreamTrack videoTrack = new MediaStreamTrack(SDPMediaTypesEnum.video, false, new List<SDPAudioVideoMediaFormat> { videoFormat }, MediaStreamStatusEnum.SendOnly);
-            //videoTrack.Ssrc = SSRC_REMOTE_VIDEO;
+            MediaStreamTrack videoTrack = new MediaStreamTrack(
+                                        SDPMediaTypesEnum.video, 
+                                        false,
+                                        new List<SDPAudioVideoMediaFormat> { videoFormat },
+                                        MediaStreamStatusEnum.SendOnly);
+            videoTrack.Ssrc = SSRC_REMOTE_VIDEO;
             pc.addTrack(videoTrack);
 
             pc.onconnectionstatechange += (state) =>
@@ -269,8 +281,8 @@ namespace SIPSorcery.Examples
                 if (state == RTCPeerConnectionState.connected)
                 {
                     logger.LogDebug("Creating RTP session to receive ffmpeg stream.");
-                    if (_ffmpegListener == null)
-                        StartFfmpegListener(FFMPEG_SDP_FILE, exitCts.Token);                    
+                    //if (_ffmpegListener == null)
+                    //    StartFfmpegListener(FFMPEG_SDP_FILE, exitCts.Token);                    
 
                     SignOnRtpPacketReceived(pc, true);
                 }

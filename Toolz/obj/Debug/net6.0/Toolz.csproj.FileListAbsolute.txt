@@ -1,0 +1,36 @@
+A:\Work\PIMU2\PrecompilerConsts\bin\Debug\net6.0\Toolz.deps.json
+A:\Work\PIMU2\PrecompilerConsts\bin\Debug\net6.0\Toolz.dll
+A:\Work\PIMU2\PrecompilerConsts\bin\Debug\net6.0\Toolz.pdb
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\Toolz.csproj.AssemblyReference.cache
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\Toolz.GeneratedMSBuildEditorConfig.editorconfig
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\Toolz.AssemblyInfoInputs.cache
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\Toolz.AssemblyInfo.cs
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\Toolz.csproj.CoreCompileInputs.cache
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\Toolz.dll
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\refint\Toolz.dll
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\Toolz.pdb
+A:\Work\PIMU2\PrecompilerConsts\obj\Debug\net6.0\ref\Toolz.dll
+A:\Work\PIMU_main\PrecompilerConsts\bin\Debug\net6.0\Toolz.deps.json
+A:\Work\PIMU_main\PrecompilerConsts\bin\Debug\net6.0\Toolz.dll
+A:\Work\PIMU_main\PrecompilerConsts\bin\Debug\net6.0\Toolz.pdb
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\Toolz.csproj.AssemblyReference.cache
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\Toolz.GeneratedMSBuildEditorConfig.editorconfig
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\Toolz.AssemblyInfoInputs.cache
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\Toolz.AssemblyInfo.cs
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\Toolz.csproj.CoreCompileInputs.cache
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\Toolz.dll
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\refint\Toolz.dll
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\Toolz.pdb
+A:\Work\PIMU_main\PrecompilerConsts\obj\Debug\net6.0\ref\Toolz.dll
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\bin\Debug\net6.0\Toolz.deps.json
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\bin\Debug\net6.0\Toolz.dll
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\bin\Debug\net6.0\Toolz.pdb
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\Toolz.csproj.AssemblyReference.cache
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\Toolz.GeneratedMSBuildEditorConfig.editorconfig
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\Toolz.AssemblyInfoInputs.cache
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\Toolz.AssemblyInfo.cs
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\Toolz.csproj.CoreCompileInputs.cache
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\Toolz.dll
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\refint\Toolz.dll
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\Toolz.pdb
+A:\Programming\SandBox\rtspTortp - NoIce\Toolz\obj\Debug\net6.0\ref\Toolz.dll
