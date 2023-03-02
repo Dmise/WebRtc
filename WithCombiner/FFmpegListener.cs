@@ -19,11 +19,23 @@ namespace WithCombiner
 
         public SDPAudioVideoMediaFormat videoFormatRTP;
         public event Action<IPEndPoint, SDPMediaTypesEnum, RTPPacket> OnRtpPacketReceivedEvnt;
+        public FFmpegListener()
+        {
+
+        }
         public FFmpegListener(string sdpFilePath, int rtpPort, uint ssrc)
         {
             _ffmpegSdpFile = sdpFilePath;
             _rtpPort = rtpPort;
             _ssrc = ssrc;
+        }
+
+        public bool Running
+        {
+            get
+            {              
+                return (_ffmpegListener?.IsStarted ?? false) && (!_ffmpegListener?.IsClosed ?? false);
+            }
         }
         public void Start()
         {
@@ -31,7 +43,7 @@ namespace WithCombiner
             {
                 Task.Delay(500);
             }
-         
+
             var sdp = SDP.ParseSDPDescription(File.ReadAllText(_ffmpegSdpFile));
             _ffmpegListener = new RTPSession(false, false, false, IPAddress.Loopback, _rtpPort);
             _ffmpegListener.AcceptRtpFromAny = true;
@@ -40,7 +52,7 @@ namespace WithCombiner
             // Add Track to RTPSession
             var videoAnn = sdp.Media.Single(x => x.Media == SDPMediaTypesEnum.video);
             videoFormatRTP = videoAnn.MediaFormats.Values.First();
-        
+
             MediaStreamTrack videoTrack = new MediaStreamTrack(
                                             SDPMediaTypesEnum.video,
                                             false,
@@ -58,7 +70,7 @@ namespace WithCombiner
             _ffmpegListener.SetDestination(SDPMediaTypesEnum.video, dummyIPEndPoint, dummyIPEndPoint);
             _ffmpegListener.OnRtpPacketReceived += OnRtpPacketReceived;
             _ffmpegListener.Start();
-            
+
         }
 
         private void OnRtpPacketReceived(IPEndPoint arg1, SDPMediaTypesEnum arg2, RTPPacket arg3)

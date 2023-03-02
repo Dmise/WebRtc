@@ -5,28 +5,30 @@ using WebSocketSharp.Server;
 
 namespace WithCombiner
 {
-    public class WebRtcClient : WebSocketBehavior
+    internal class WebRtcClient : WebSocketBehavior
     {
-        public RTCPeerConnection pc;
+        private RTCPeerConnection _pc;
 
-        public event Func<WebSocketContext, Task<RTCPeerConnection>> WebSocketOpened;
-        public event Action<WebSocketContext, RTCPeerConnection, string> OnMessageReceived;
+        public event Func<WebSocketContext, Task<RTCPeerConnection>> SocketOpened;
+        public event Func<WebSocketContext, RTCPeerConnection, string, Task> MessageReceived;
 
         public WebRtcClient()
-        { }
+        {
+
+        }
 
         protected override void OnMessage(MessageEventArgs e)
         {
-            var handler = OnMessageReceived;
+            var handler = MessageReceived;
             if (handler == null) return;
-            OnMessageReceived(this.Context, pc, e.Data);
+            MessageReceived(Context, _pc, e.Data);
         }
 
         protected override async void OnOpen()
         {
-            var handler = WebSocketOpened;
+            var handler = SocketOpened;
             if (handler == null) return;
-            pc = await WebSocketOpened(this.Context);
+            _pc = await SocketOpened(Context);
         }
     }
 }

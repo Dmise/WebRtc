@@ -30,8 +30,8 @@ namespace WithCombiner
             _webSocketServer = new WebSocketServer(_wsAddress, _wsPort);
             _webSocketServer.AddWebSocketService<WebRtcClient>("/", (client) =>
             {
-                client.WebSocketOpened += SendOffer;
-                client.OnMessageReceived += WebSocketMessageReceived;
+                client.SocketOpened += SendOffer;
+                client.MessageReceived += WebSocketMessageReceived;
             });
 
             _webSocketServer.Start();
@@ -117,7 +117,7 @@ namespace WithCombiner
             return pc;
         }
 
-        private void WebSocketMessageReceived(WebSocketContext context, RTCPeerConnection pc, string message)
+        private async Task WebSocketMessageReceived(WebSocketContext context, RTCPeerConnection pc, string message)
         {
             try
             {
